@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Exercises</title>
+    </head>
+    <body>
+        <script>
+            var pElem = document.createElement("p");
+            var pText = document.createTextNode("This is the first paragraph");
+            pElem.appendChild(pText);
+            document.body.appendChild(pElem);
+            var children = document.documentElement.children;
+            var total = children.length;
+            for (var i = 0; i < children.length; i++) {
+                var child = children[i];
+                total += child.children.length;
+            }
+            alert(total);
+        </script>
+    </body>
+</html>

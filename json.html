@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Which Kiwi?</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Which Kiwi?</h1>
+    <script >
+      var attrs = ["id", "title", "linkDocCount", "linkOccCount"];
+      var jsonString =
+'{\n' +
+'    "labels": [\n' +
+'        {\n' +
+'            "text": "Kiwi",\n' +
+'            "linkDocCount": 168,\n' +
+'            "linkOccCount": 177,\n' +
+'            "senses": [\n' +
+'                {"id": 17362, "title": "Kiwi", "linkDocCount": 59, "linkOccCount": 60, "fromTitle": true},\n' +
+'                {"id": 509080, "title": "Kiwi (people)", "linkDocCount": 38, "linkOccCount": 41, "fromTitle": false}\n' +
+'            ]\n' +
+'        }\n' +
+'    ]\n' +
+'}\n' +
+'';
+    </script>
+    <script>
+      var obj = JSON.parse(jsonString);
+      // write your code here
+      var label = obj.labels[0];
+
+      var infoDiv = document.createElement("div");
+      infoDiv.innerHTML =
+  "<p><strong>Text:</strong>"+ label.text + "</p>" +
+  "<p><strong>LinkDocCount:</strong>" + label.linkDocCount+ "</p>" +
+  "<p><strong>LinkOccCount:</strong>" + label.linkOccCount + "</p>";
+
+      var sensesTitle = document.createElement("h2");
+      sensesTitle.textContent = "Senses:";
+
+      var table = document.createElement("table");
+
+      var thead = table.createTHead();
+      var headerRow = thead.insertRow();
+      attrs.forEach(function (key) {
+        var th = document.createElement("th");
+        th.textContent = key;
+        headerRow.appendChild(th);
+      });
+
+      var tbody = table.createTBody();
+      label.senses.forEach(function (sense) {
+        var row = tbody.insertRow();
+        attrs.forEach(function (key) {
+          var cell = row.insertCell();
+          cell.textContent = sense[key];
+        });
+      });
+
+      document.body.appendChild(infoDiv);
+      document.body.appendChild(sensesTitle);
+      document.body.appendChild(table);
+
+
+    </script>
+  </body>
+</html>
