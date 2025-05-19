@@ -1,5 +1,4 @@
-# COMPX575- Task Five
-Due on **Friday the 28th March at midday**. 
+# DOM operation
 
 # Task Goal 
 Demonstrate a basic understanding using Javascript to:
@@ -131,11 +130,3 @@ Open *json.html* in a text editor and write JavaScript code to parse the JSON st
 
 As in the previous part, the column names are provided in the array *attrs* and you must not hard code them.
 
-## Grading
-This task is worth as much as 5% of your final grade and is marked out of 5.
-* Part One and Two are jointly worth one mark.
-* Part Three is worth two marks.
-* Part Four is worth two marks.
-
-## Submission
-On top of the commits to your Git repository, please upload your source files to moodle.
